@@ -1,10 +1,500 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nomenclatura de Variables y Constantes - Cali Pollo</title>
+  <link rel="stylesheet" href="NomenclatureGeneral.css">
 </head>
 <body>
+<header>
+  <h1>Cali Pollo - Nomenclatura de Variables y Constantes</h1>
+  <nav>
+    <ul>
+      <li><a href="#javascript">JavaScript</a></li>
+      <li><a href="#php">PHP</a></li>
+      <li><a href="#css">CSS</a></li>
+      <li><a href="#convencion-cali-pollo">Convención Cali Pollo</a></li>
+    </ul>
+  </nav>
+</header>
 
+<main>
+  <section class="intro">
+    <h2>Estándares de Nomenclatura para Variables y Constantes</h2>
+    <p>Este documento establece las convenciones de nomenclatura para variables y constantes en el proyecto Cali Pollo. Estas pautas ayudarán a mantener un código consistente, legible y mantenible para todos los desarrolladores del equipo.</p>
+  </section>
+
+  <section id="javascript" class="language-section">
+    <h2>Variables y Constantes en JavaScript</h2>
+
+    <div class="standard-item">
+      <h3>Variables</h3>
+      <p>Las variables en JavaScript usarán la convención camelCase:</p>
+
+      <div class="code-example">
+                    <pre>
+// Variables simples
+let menuPrice = 15000;
+let itemName = 'Pollo Asado';
+let isAvailable = true;
+
+// Variables de objetos complejos
+let activeOrder = {
+    items: [],
+    customer: {},
+    total: 0
+};
+
+// Arrays
+let popularDishes = ['Pollo Asado', 'Pollo Broaster', 'Alitas BBQ'];
+                    </pre>
+      </div>
+
+      <h4>Prefijos y sufijos recomendados:</h4>
+      <ul>
+        <li><code>is</code>/<code>has</code>/<code>can</code> - Para variables booleanas</li>
+        <li><code>min</code>/<code>max</code> - Para límites</li>
+        <li><code>num</code>/<code>count</code> - Para cantidades numéricas</li>
+        <li><code>temp</code> - Para variables temporales</li>
+      </ul>
+
+      <div class="code-example">
+                    <pre>
+// Ejemplos específicos para Cali Pollo
+let isSpicy = true;
+let hasDelivery = true;
+let canApplyDiscount = false;
+let minOrderValue = 20000;
+let maxDeliveryDistance = 10;
+let numOrderItems = 5;
+let tempTotalPrice = 45000;
+                    </pre>
+      </div>
+    </div>
+
+    <div class="standard-item">
+      <h3>Constantes</h3>
+      <p>Las constantes en JavaScript seguirán dos convenciones:</p>
+
+      <h4>1. Constantes primitivas (valores fijos que no cambiarán):</h4>
+      <div class="code-example">
+                    <pre>
+// Usar UPPER_SNAKE_CASE para constantes "verdaderas" que representan valores fijos
+const TAX_RATE = 0.19;
+const DELIVERY_FEE = 5000;
+const MIN_PURCHASE_AMOUNT = 15000;
+const MAX_ITEMS_PER_ORDER = 20;
+
+// Constantes específicas de Cali Pollo
+const RESTAURANT_NAME = 'Cali Pollo';
+const RESTAURANT_PHONE = '601-555-1234';
+const RESTAURANT_ADDRESS = 'Calle 15 #25-30, Cali';
+const OPENING_HOUR = 11;
+const CLOSING_HOUR = 22;
+                    </pre>
+      </div>
+
+      <h4>2. Referencias constantes (declaradas con const pero su contenido puede cambiar):</h4>
+      <div class="code-example">
+                    <pre>
+// Usar camelCase para referencias const a objetos y arrays
+const menuConfig = {
+    showPrices: true,
+    defaultCategory: 'platos-principales',
+    sortOrder: 'price'
+};
+
+const deliveryZones = [
+    { name: 'Zona Norte', fee: 5000 },
+    { name: 'Zona Sur', fee: 6000 },
+    { name: 'Zona Este', fee: 7000 },
+    { name: 'Zona Oeste', fee: 8000 }
+];
+                    </pre>
+      </div>
+    </div>
+
+    <div class="standard-item">
+      <h3>DOM y jQuery Variables</h3>
+      <p>Para elementos DOM, usar el prefijo <code>$</code> para identificarlos claramente:</p>
+
+      <div class="code-example">
+                    <pre>
+// Variables DOM con prefijo $
+const $menuContainer = document.getElementById('menu-container');
+const $orderForm = document.querySelector('.order-form');
+const $priceElements = document.querySelectorAll('.menu-item__price');
+
+// Con jQuery (si se usa)
+const $menuItems = $('.menu-item');
+const $submitButton = $('#submit-order');
+                    </pre>
+      </div>
+    </div>
+  </section>
+
+  <section id="php" class="language-section">
+    <h2>Variables y Constantes en PHP</h2>
+
+    <div class="standard-item">
+      <h3>Variables</h3>
+      <p>Las variables en PHP utilizarán camelCase:</p>
+
+      <div class="code-example">
+                    <pre>
+&lt;?php
+// Variables simples
+$menuItem = 'Pollo Asado';
+$itemPrice = 18000;
+$isSpecialOffer = true;
+
+// Arrays
+$menuCategories = ['Platos Principales', 'Entradas', 'Postres', 'Bebidas'];
+
+// Variables dentro de clases
+class Order
+{
+    private $orderId;
+    private $customerName;
+    private $orderItems = [];
+    private $totalAmount = 0;
+
+    public function addItem($itemName, $itemPrice)
+    {
+        $newItem = [
+            'name' => $itemName,
+            'price' => $itemPrice
+        ];
+
+        $this->orderItems[] = $newItem;
+        $this->updateTotal();
+    }
+}
+                    </pre>
+      </div>
+    </div>
+
+    <div class="standard-item">
+      <h3>Constantes</h3>
+      <p>Las constantes en PHP se definirán en UPPER_SNAKE_CASE:</p>
+
+      <div class="code-example">
+                    <pre>
+&lt;?php
+// Constantes globales
+define('TAX_RATE', 0.19);
+define('DELIVERY_FEE_BASE', 5000);
+define('RESTAURANT_NAME', 'Cali Pollo');
+
+// Constantes de clase (PHP 7.1+)
+class PaymentProcessor
+{
+    const PAYMENT_METHOD_CASH = 'cash';
+    const PAYMENT_METHOD_CREDIT = 'credit';
+    const PAYMENT_METHOD_DEBIT = 'debit';
+    const PAYMENT_METHOD_ONLINE = 'online';
+
+    const PAYMENT_STATUS_PENDING = 'pending';
+    const PAYMENT_STATUS_COMPLETED = 'completed';
+    const PAYMENT_STATUS_FAILED = 'failed';
+
+    // ...
+}
+
+// Constantes en Enum (PHP 8.1+)
+enum OrderStatus: string
+{
+    case PENDING = 'pending';
+    case PROCESSING = 'processing';
+    case COMPLETED = 'completed';
+    case DELIVERED = 'delivered';
+    case CANCELED = 'canceled';
+}
+                    </pre>
+      </div>
+    </div>
+  </section>
+
+  <section id="css" class="language-section">
+    <h2>Variables en CSS</h2>
+
+    <div class="standard-item">
+      <h3>Variables CSS (Custom Properties)</h3>
+      <p>Para las variables CSS (propiedades personalizadas), utilizaremos la siguiente convención:</p>
+
+      <div class="code-example">
+                    <pre>
+:root {
+    /* Colores de la marca Cali Pollo */
+    --color-primary: #e8a628;     /* Amarillo/naranja pollo */
+    --color-secondary: #dd5928;   /* Rojo anaranjado picante */
+    --color-accent: #8c0303;      /* Rojo oscuro salsa */
+    --color-dark: #333333;        /* Oscuro para texto */
+    --color-light: #f4f4f4;       /* Claro para fondos */
+
+    /* Tipografía */
+    --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --font-headings: 'Georgia', serif;
+    --font-size-base: 16px;
+    --font-size-h1: 2.5rem;
+    --font-size-h2: 2rem;
+    --font-size-h3: 1.5rem;
+
+    /* Espaciado */
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+
+    /* Bordes y sombras */
+    --border-radius-sm: 3px;
+    --border-radius-md: 5px;
+    --border-radius-lg: 10px;
+    --shadow-card: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Uso de las variables */
+.menu-item {
+    background-color: white;
+    border-radius: var(--border-radius-md);
+    padding: var(--spacing-md);
+    box-shadow: var(--shadow-card);
+}
+
+.menu-item__title {
+    color: var(--color-accent);
+    font-family: var(--font-headings);
+    font-size: var(--font-size-h3);
+}
+
+.menu-item--featured {
+    border-left: 5px solid var(--color-primary);
+}
+                    </pre>
+      </div>
+
+      <h4>Convención de nomenclatura:</h4>
+      <ul>
+        <li>Nombres en minúsculas</li>
+        <li>Palabras separadas por guiones</li>
+        <li>Agrupación por categoría (color, font, spacing, etc.)</li>
+        <li>Para variables relacionadas, usar sufijos como xs, sm, md, lg, xl</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="convencion-cali-pollo" class="language-section">
+    <h2>Convención Específica para Cali Pollo</h2>
+
+    <div class="standard-item">
+      <h3>Prefijos específicos del dominio</h3>
+      <p>Para mejorar la legibilidad, utilizaremos prefijos específicos del dominio en determinadas variables:</p>
+
+      <div class="code-example">
+                    <pre>
+// JavaScript
+// Prefijo "menu" para todo lo relacionado con el menú
+const menuItems = [];
+let menuActiveCategory = 'platos-principales';
+const menuFetchData = async () => { /* ... */ };
+
+// Prefijo "order" para todo lo relacionado con pedidos
+let orderTotal = 0;
+const orderItems = [];
+function orderCalculateTotal() { /* ... */ };
+
+// Prefijo "user" para todo lo relacionado con usuarios/clientes
+const userData = {};
+let userIsLoggedIn = false;
+function userLogin() { /* ... */ };
+
+// PHP
+class MenuItem {
+    private $menuItemId;
+    private $menuItemName;
+    private $menuItemPrice;
+}
+
+class OrderProcessor {
+    private $orderItems = [];
+    private $orderCustomer;
+    private $orderDeliveryAddress;
+}
+                    </pre>
+      </div>
+    </div>
+
+    <div class="standard-item">
+      <h3>Diccionario de términos comunes</h3>
+      <p>Para mantener consistencia, usaremos estas palabras específicas en todas las variables relacionadas:</p>
+
+      <table class="terms-table">
+        <thead>
+        <tr>
+          <th>Concepto</th>
+          <th>Término a Usar</th>
+          <th>Evitar</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>Platos del menú</td>
+          <td><code>menuItem</code></td>
+          <td><code>dish</code>, <code>food</code>, <code>plate</code></td>
+        </tr>
+        <tr>
+          <td>Cliente</td>
+          <td><code>customer</code></td>
+          <td><code>user</code>, <code>client</code>, <code>person</code></td>
+        </tr>
+        <tr>
+          <td>Pedido</td>
+          <td><code>order</code></td>
+          <td><code>purchase</code>, <code>sale</code></td>
+        </tr>
+        <tr>
+          <td>Domicilio</td>
+          <td><code>delivery</code></td>
+          <td><code>shipping</code>, <code>transport</code></td>
+        </tr>
+        <tr>
+          <td>Acompañamientos</td>
+          <td><code>side</code></td>
+          <td><code>accompaniment</code>, <code>extra</code></td>
+        </tr>
+        <tr>
+          <td>Promociones</td>
+          <td><code>promo</code></td>
+          <td><code>deal</code>, <code>discount</code>, <code>offer</code></td>
+        </tr>
+        </tbody>
+      </table>
+
+      <div class="code-example">
+                    <pre>
+// Ejemplos:
+const featuredMenuItem = menu.getById(5);  // ✓ CORRECTO
+const featuredDish = menu.getById(5);      // ✗ INCORRECTO
+
+// En PHP
+$orderTotal = calculateTotal($order);      // ✓ CORRECTO
+$purchaseAmount = calculateTotal($order);  // ✗ INCORRECTO
+
+// En JavaScript
+let deliveryFee = 5000;                    // ✓ CORRECTO
+let shippingCost = 5000;                   // ✗ INCORRECTO
+                    </pre>
+      </div>
+    </div>
+
+    <div class="standard-item">
+      <h3>Ejemplos completos para el proyecto</h3>
+      <p>Aquí hay algunos ejemplos de código con variables nombradas según nuestras convenciones:</p>
+
+      <div class="code-example">
+                    <pre>
+// JavaScript - Sistema de pedido
+const menuItems = [
+  { id: 1, name: 'Pollo Asado', price: 18000, isSpicy: false, category: 'platos-principales' },
+  { id: 2, name: 'Alitas BBQ', price: 15000, isSpicy: true, category: 'entradas' },
+  { id: 3, name: 'Pollo Broaster', price: 20000, isSpicy: false, category: 'platos-principales' }
+];
+
+const DELIVERY_MIN_PURCHASE = 15000;
+const TAX_RATE = 0.19;
+
+let orderItems = [];
+let orderSubtotal = 0;
+let orderTaxAmount = 0;
+let orderTotal = 0;
+let customerName = '';
+let customerPhone = '';
+let customerAddress = '';
+let isDeliveryOrder = false;
+
+function calculateOrderTotal() {
+  orderSubtotal = orderItems.reduce((sum, item) => sum + item.price, 0);
+  orderTaxAmount = orderSubtotal * TAX_RATE;
+  orderTotal = orderSubtotal + orderTaxAmount;
+
+  if (isDeliveryOrder && orderSubtotal < DELIVERY_MIN_PURCHASE) {
+    throw new Error(`El pedido mínimo para domicilio es $${DELIVERY_MIN_PURCHASE}`);
+  }
+
+  return orderTotal;
+}
+                    </pre>
+      </div>
+
+      <div class="code-example">
+                    <pre>
+// PHP - Clase para Item del Menú
+&lt;?php
+class MenuItem
+{
+    private $menuItemId;
+    private $menuItemName;
+    private $menuItemPrice;
+    private $menuItemDescription;
+    private $isAvailable;
+    private $isSpicy;
+    private $menuItemImageUrl;
+    private $menuItemCategory;
+    private $menuItemCalories;
+
+    // Constantes de categorías
+    const CATEGORY_MAIN = 'platos-principales';
+    const CATEGORY_STARTER = 'entradas';
+    const CATEGORY_SIDE = 'acompanantes';
+    const CATEGORY_DESSERT = 'postres';
+    const CATEGORY_DRINK = 'bebidas';
+
+    public function __construct($menuItemId, $menuItemName, $menuItemPrice)
+    {
+        $this->menuItemId = $menuItemId;
+        $this->menuItemName = $menuItemName;
+        $this->menuItemPrice = $menuItemPrice;
+        $this->isAvailable = true;
+    }
+
+    public function getMenuItemPrice()
+    {
+        return $this->menuItemPrice;
+    }
+
+    public function isMenuItemAvailable()
+    {
+        return $this->isAvailable;
+    }
+
+    public function setMenuItemCategory($categoryName)
+    {
+        $validCategories = [
+            self::CATEGORY_MAIN,
+            self::CATEGORY_STARTER,
+            self::CATEGORY_SIDE,
+            self::CATEGORY_DESSERT,
+            self::CATEGORY_DRINK
+        ];
+
+        if (in_array($categoryName, $validCategories)) {
+            $this->menuItemCategory = $categoryName;
+            return true;
+        }
+
+        return false;
+    }
+}
+                    </pre>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; 2025 Cali Pollo - Estándares de Nomenclatura</p>
+</footer>
 </body>
 </html>
