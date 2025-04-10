@@ -1,10 +1,416 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nomenclatura de Clases, Métodos y Comentarios - Cali Pollo</title>
+  <link rel="stylesheet" href="NomenclatureCaliPollo.css">
 </head>
 <body>
+<header>
+  <h1>Cali Pollo - Nomenclatura de Clases, Métodos y Comentarios</h1>
+  <nav>
+    <ul>
+      <li><a href="#html-css">HTML/CSS</a></li>
+      <li><a href="#javascript">JavaScript</a></li>
+      <li><a href="#php">PHP</a></li>
+      <li><a href="#comentarios">Comentarios</a></li>
+    </ul>
+  </nav>
+</header>
 
+<main>
+  <section class="intro">
+    <h2>Estándares de Nomenclatura</h2>
+    <p>Este documento establece las convenciones de nomenclatura para clases, métodos y comentarios en el proyecto Cali Pollo. Seguir estas pautas es esencial para mantener la consistencia y legibilidad del código.</p>
+  </section>
+
+  <section id="html-css" class="language-section">
+    <h2>Nomenclatura en HTML y CSS</h2>
+
+    <div class="standard-item">
+      <h3>Clases en HTML/CSS</h3>
+      <p>Para el proyecto Cali Pollo, utilizaremos la metodología BEM (Block, Element, Modifier) para nombrar nuestras clases CSS:</p>
+
+      <div class="code-example">
+                    <pre>
+/* Bloque: Representa el componente principal */
+.menu-item { }
+
+/* Elemento: Parte del bloque que no puede existir independientemente */
+.menu-item__title { }
+.menu-item__price { }
+.menu-item__description { }
+
+/* Modificador: Variante o estado del bloque */
+.menu-item--featured { }
+.menu-item--sold-out { }
+                    </pre>
+      </div>
+
+      <h4>Reglas específicas:</h4>
+      <ul>
+        <li>Nombres de clase en minúsculas</li>
+        <li>Palabras separadas por guiones (-)</li>
+        <li>Elementos con doble guion bajo (__)</li>
+        <li>Modificadores con doble guion (--)</li>
+        <li>Nombres descriptivos relacionados con la función, no con la apariencia</li>
+      </ul>
+
+      <h4>Ejemplos específicos para Cali Pollo:</h4>
+      <div class="code-example">
+                    <pre>
+<!-- Sección menú -->
+&lt;section class="menu"&gt;
+    &lt;div class="menu-item"&gt;
+        &lt;h3 class="menu-item__title"&gt;Pollo a la Parrilla&lt;/h3&gt;
+        &lt;p class="menu-item__description"&gt;Pollo marinado en especias&lt;/p&gt;
+        &lt;span class="menu-item__price"&gt;$15.000&lt;/span&gt;
+    &lt;/div&gt;
+
+    &lt;div class="menu-item menu-item--featured"&gt;
+        &lt;h3 class="menu-item__title"&gt;Pollo Asado Caleño&lt;/h3&gt;
+        &lt;p class="menu-item__description"&gt;Especialidad de la casa&lt;/p&gt;
+        &lt;span class="menu-item__price"&gt;$18.000&lt;/span&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+                    </pre>
+      </div>
+    </div>
+
+    <div class="standard-item">
+      <h3>IDs en HTML</h3>
+      <p>Los IDs deben usarse exclusivamente para:</p>
+      <ul>
+        <li>Referencias de anclas en la navegación</li>
+        <li>Conectar etiquetas con elementos de formulario</li>
+        <li>JavaScript cuando es necesario identificar un elemento único</li>
+      </ul>
+
+      <h4>Reglas para IDs:</h4>
+      <ul>
+        <li>Usar camelCase</li>
+        <li>Ser específicos y descriptivos</li>
+        <li>No usar para estilos (preferir clases)</li>
+      </ul>
+
+      <div class="code-example">
+                    <pre>
+&lt;section id="menuPrincipal"&gt;
+&lt;form id="formularioContacto"&gt;
+&lt;div id="mapaUbicacion"&gt;
+                    </pre>
+      </div>
+    </div>
+  </section>
+
+  <section id="javascript" class="language-section">
+    <h2>Nomenclatura en JavaScript</h2>
+
+    <div class="standard-item">
+      <h3>Clases</h3>
+      <p>Las clases en JavaScript usarán PascalCase:</p>
+
+      <div class="code-example">
+                    <pre>
+class MenuItem {
+    constructor(name, price, description) {
+        this.name = name;
+        this.price = price;
+        this.description = description;
+    }
+}
+
+class ShoppingCart {
+    // ...
+}
+
+class OrderManager {
+    // ...
+}
+                    </pre>
+      </div>
+    </div>
+
+    <div class="standard-item">
+      <h3>Métodos y Funciones</h3>
+      <p>Los métodos y funciones usarán camelCase y deberán ser verbos o frases verbales:</p>
+
+      <div class="code-example">
+                    <pre>
+// Métodos dentro de una clase
+class MenuManager {
+    addMenuItem(item) {
+        // ...
+    }
+
+    calculateTotal() {
+        // ...
+    }
+
+    displayFeaturedItems() {
+        // ...
+    }
+}
+
+// Funciones independientes
+function validateOrder(order) {
+    // ...
+}
+
+function formatCurrency(amount) {
+    // ...
+}
+
+// Funciones anónimas y arrow functions
+const showNotification = (message) => {
+    // ...
+};
+                    </pre>
+      </div>
+
+      <h4>Prefijos recomendados:</h4>
+      <ul>
+        <li><code>get...</code> - Para obtener un valor</li>
+        <li><code>set...</code> - Para establecer un valor</li>
+        <li><code>is...</code> - Para verificaciones booleanas</li>
+        <li><code>has...</code> - Para verificar existencia</li>
+        <li><code>calculate...</code> - Para cálculos</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="php" class="language-section">
+    <h2>Nomenclatura en PHP</h2>
+
+    <div class="standard-item">
+      <h3>Clases y Namespace</h3>
+      <p>Las clases en PHP usarán PascalCase. Los namespace seguirán la estructura PSR-4:</p>
+
+      <div class="code-example">
+                    <pre>
+&lt;?php
+namespace CaliPollo\Menu;
+
+class MenuItem
+{
+    // ...
+}
+
+namespace CaliPollo\Order;
+
+class OrderProcessor
+{
+    // ...
+}
+                    </pre>
+      </div>
+    </div>
+
+    <div class="standard-item">
+      <h3>Métodos</h3>
+      <p>Los métodos en PHP utilizarán camelCase:</p>
+
+      <div class="code-example">
+                    <pre>
+&lt;?php
+namespace CaliPollo\Menu;
+
+class MenuManager
+{
+    public function addMenuItem($item)
+    {
+        // ...
+    }
+
+    private function validateMenuItem($item)
+    {
+        // ...
+    }
+
+    public function getSpecialOfTheDay()
+    {
+        // ...
+    }
+}
+                    </pre>
+      </div>
+    </div>
+
+    <div class="standard-item">
+      <h3>Interfaces y Traits</h3>
+      <p>Las interfaces llevarán el sufijo "Interface" y los traits llevarán nombres descriptivos de su funcionalidad:</p>
+
+      <div class="code-example">
+                    <pre>
+&lt;?php
+namespace CaliPollo\Menu;
+
+interface MenuItemInterface
+{
+    public function getPrice();
+    public function getName();
+}
+
+trait Discountable
+{
+    private $discountRate;
+
+    public function applyDiscount($amount)
+    {
+        return $amount * (1 - $this->discountRate);
+    }
+}
+                    </pre>
+      </div>
+    </div>
+  </section>
+
+  <section id="comentarios" class="language-section">
+    <h2>Estándares de Comentarios</h2>
+
+    <div class="standard-item">
+      <h3>Comentarios en HTML/CSS</h3>
+
+      <h4>HTML:</h4>
+      <div class="code-example">
+                    <pre>
+&lt;!-- Sección de menú principal --&gt;
+&lt;section class="menu"&gt;
+    &lt;!-- Ítem individual del menú --&gt;
+    &lt;div class="menu-item"&gt;
+        ...
+    &lt;/div&gt;
+&lt;/section&gt;
+                    </pre>
+      </div>
+
+      <h4>CSS:</h4>
+      <div class="code-example">
+                    <pre>
+/* ===== ESTILOS DE MENÚ ===== */
+.menu {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+/* Ítem de menú - versión estándar */
+.menu-item {
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 4px;
+}
+
+/* Ítem destacado - con borde especial y fondo */
+.menu-item--featured {
+    border-color: gold;
+    background-color: #fffdf0;
+}
+                    </pre>
+      </div>
+    </div>
+
+    <div class="standard-item">
+      <h3>Comentarios en JavaScript</h3>
+
+      <h4>Comentarios de función:</h4>
+      <div class="code-example">
+                    <pre>
+/**
+ * Calcula el precio total de los ítems en el carrito
+ * aplicando descuentos si corresponde
+ *
+ * @param {Array} items - Array de objetos MenuItem
+ * @param {Number} discountRate - Tasa de descuento (0-1)
+ * @return {Number} El precio total calculado
+ */
+function calculateCartTotal(items, discountRate = 0) {
+    // Verificamos que los items sean válidos
+    if (!Array.isArray(items)) {
+        throw new Error('Items debe ser un array');
+    }
+
+    // Sumamos el precio de cada ítem
+    let total = 0;
+    for (const item of items) {
+        total += item.price;
+    }
+
+    // Aplicamos descuento si existe
+    if (discountRate > 0) {
+        total = total * (1 - discountRate);
+    }
+
+    return total;
+}
+                    </pre>
+      </div>
+
+      <h4>Comentarios en línea:</h4>
+      <div class="code-example">
+                    <pre>
+// Obtenemos los elementos del DOM
+const menuItems = document.querySelectorAll('.menu-item');
+const cartButton = document.getElementById('cartButton');
+
+// Formatear precio en pesos colombianos
+const formatPrice = (price) => `$${price.toLocaleString('es-CO')}`;
+                    </pre>
+      </div>
+    </div>
+
+    <div class="standard-item">
+      <h3>Comentarios en PHP</h3>
+
+      <div class="code-example">
+                    <pre>
+&lt;?php
+namespace CaliPollo\Order;
+
+/**
+ * Clase para procesar pedidos del restaurante
+ *
+ * Esta clase maneja la lógica de procesamiento de pedidos,
+ * incluyendo validación, cálculo de precios y preparación
+ * para envío a cocina.
+ *
+ * @author Equipo Cali Pollo
+ */
+class OrderProcessor
+{
+    /**
+     * Procesa un nuevo pedido
+     *
+     * @param array $orderData Datos del pedido
+     * @param int $customerId ID del cliente
+     * @return Order Objeto pedido procesado
+     * @throws InvalidOrderException Si el pedido es inválido
+     */
+    public function processOrder(array $orderData, int $customerId): Order
+    {
+        // Validar datos del pedido
+        $this->validateOrder($orderData);
+
+        // Crear nuevo objeto de pedido
+        $order = new Order($customerId);
+
+        // Añadir ítems al pedido
+        foreach ($orderData['items'] as $item) {
+            $order->addItem($item['id'], $item['quantity']);
+        }
+
+        return $order;
+    }
+}
+                    </pre>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; 2025 Cali Pollo - Nomenclatura de Clases, Métodos y Comentarios</p>
+</footer>
 </body>
 </html>
