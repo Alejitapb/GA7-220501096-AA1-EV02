@@ -1,10 +1,226 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estándares de Codificación - Cali Pollo</title>
+    <link rel="stylesheet" href="StandarsLanguage.css">
 </head>
 <body>
+<header>
+    <h1>Cali Pollo - Estándares de Codificación</h1>
+    <nav>
+        <ul>
+            <li><a href="#html">HTML</a></li>
+            <li><a href="#css">CSS</a></li>
+            <li><a href="#javascript">JavaScript</a></li>
+            <li><a href="#php">PHP</a></li>
+        </ul>
+    </nav>
+</header>
 
+<main>
+    <section class="intro">
+        <h2>Introducción a los Estándares de Codificación</h2>
+        <p>Este documento establece los estándares de codificación para el desarrollo del proyecto web Cali Pollo. Seguir estos estándares asegura una base de código consistente, mantenible y de alta calidad.</p>
+    </section>
+
+    <section id="html" class="language-section">
+        <h2>Estándares HTML</h2>
+
+        <div class="standard-item">
+            <h3>Estructura Básica</h3>
+            <p>Utilizar HTML5 con la estructura adecuada incluyendo DOCTYPE, html, head y body.</p>
+            <div class="code-example">
+                    <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Cali Pollo - Título de la Página&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;!-- Contenido principal --&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+                    </pre>
+            </div>
+        </div>
+
+        <div class="standard-item">
+            <h3>Indentación y Formato</h3>
+            <ul>
+                <li>Usar 4 espacios para la indentación, no tabuladores</li>
+                <li>Elementos anidados deben estar indentados adecuadamente</li>
+                <li>Nombres de etiquetas y atributos en minúsculas</li>
+                <li>Utilizar comillas dobles para los valores de los atributos</li>
+            </ul>
+        </div>
+
+        <div class="standard-item">
+            <h3>Organización</h3>
+            <ul>
+                <li>Separar estructura (HTML), presentación (CSS) y comportamiento (JavaScript)</li>
+                <li>Utilizar etiquetas semánticas (header, nav, main, section, article, footer, etc.)</li>
+                <li>Incluir atributos alt en imágenes para accesibilidad</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="css" class="language-section">
+        <h2>Estándares CSS</h2>
+
+        <div class="standard-item">
+            <h3>Estructura y Organización</h3>
+            <ul>
+                <li>Archivos CSS externos para separar contenido de presentación</li>
+                <li>Organizar reglas por componentes o secciones</li>
+                <li>Comentar secciones importantes</li>
+            </ul>
+            <div class="code-example">
+                    <pre>
+/* ===== HEADER STYLES ===== */
+header {
+    background-color: #ffcc00;
+    padding: 20px;
+}
+
+/* ===== NAVIGATION STYLES ===== */
+nav {
+    display: flex;
+    justify-content: center;
+}
+                    </pre>
+            </div>
+        </div>
+
+        <div class="standard-item">
+            <h3>Formato</h3>
+            <ul>
+                <li>Una propiedad por línea</li>
+                <li>Espacio después de los dos puntos en las propiedades</li>
+                <li>Punto y coma después de cada declaración</li>
+                <li>Usar clases en lugar de IDs cuando sea posible</li>
+            </ul>
+        </div>
+
+        <div class="standard-item">
+            <h3>Nomenclatura BEM</h3>
+            <p>Utilizar la metodología BEM (Block, Element, Modifier) para nombrar clases:</p>
+            <div class="code-example">
+                    <pre>
+.menu-item { }
+.menu-item__price { }
+.menu-item--featured { }
+                    </pre>
+            </div>
+        </div>
+    </section>
+
+    <section id="javascript" class="language-section">
+        <h2>Estándares JavaScript</h2>
+
+        <div class="standard-item">
+            <h3>Sintaxis</h3>
+            <ul>
+                <li>Usar ECMAScript moderno (ES6+) cuando sea posible</li>
+                <li>Punto y coma al final de cada declaración</li>
+                <li>Preferir const sobre let; evitar var</li>
+            </ul>
+            <div class="code-example">
+                    <pre>
+// Correcto
+const menuItems = document.querySelectorAll('.menu-item');
+let totalPrice = 0;
+
+// Incorrecto
+var menuItems = document.querySelectorAll('.menu-item')
+                    </pre>
+            </div>
+        </div>
+
+        <div class="standard-item">
+            <h3>Estilo y Formato</h3>
+            <ul>
+                <li>Indentación de 2 espacios</li>
+                <li>Líneas de máximo 80 caracteres</li>
+                <li>Usar camelCase para variables y funciones</li>
+                <li>Usar PascalCase para clases</li>
+                <li>Espacios alrededor de operadores</li>
+            </ul>
+        </div>
+
+        <div class="standard-item">
+            <h3>Buenas Prácticas</h3>
+            <ul>
+                <li>Evitar variables globales</li>
+                <li>Usar módulos para organizar el código</li>
+                <li>Comentar funciones complejas</li>
+                <li>Manejo adecuado de errores</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="php" class="language-section">
+        <h2>Estándares PHP</h2>
+
+        <div class="standard-item">
+            <h3>Estructura y Formato</h3>
+            <ul>
+                <li>Utilizar PHP 7.4+ y sus características</li>
+                <li>Tags PHP: usar siempre &lt;?php ?&gt;, nunca tags cortos</li>
+                <li>Indentación de 4 espacios</li>
+                <li>Llaves en nueva línea para clases y funciones, misma línea para condicionales y bucles</li>
+            </ul>
+            <div class="code-example">
+                    <pre>
+&lt;?php
+namespace CaliPollo\Menu;
+
+class MenuItem
+{
+    private string $name;
+    private float $price;
+
+    public function __construct(string $name, float $price)
+    {
+        $this->name = $name;
+        $this->price = $price;
+
+        if ($price <= 0) {
+            throw new \InvalidArgumentException("El precio debe ser mayor que cero");
+        }
+    }
+}
+                    </pre>
+            </div>
+        </div>
+
+        <div class="standard-item">
+            <h3>Nomenclatura</h3>
+            <ul>
+                <li>CamelCase para métodos y variables</li>
+                <li>PascalCase para clases</li>
+                <li>UPPER_SNAKE_CASE para constantes</li>
+                <li>Nombres descriptivos y en español para mejor comprensión</li>
+            </ul>
+        </div>
+
+        <div class="standard-item">
+            <h3>Seguridad</h3>
+            <ul>
+                <li>Sanitizar todas las entradas de usuario</li>
+                <li>Usar consultas parametrizadas para bases de datos</li>
+                <li>Validar datos antes de procesarlos</li>
+                <li>Gestionar adecuadamente las sesiones</li>
+            </ul>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2025 - Estándares de Codificación</p>
+</footer>
 </body>
 </html>
